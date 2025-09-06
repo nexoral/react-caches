@@ -5,7 +5,7 @@
   "main": "./lib/config/react-caches.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/AnkanSaha/react-caches.git"
+    "url": "git://github.com/Nexoral/react-caches.git"
   },
   "types": "./lib/config/react-caches.d.ts",
   "author": "Ankan Saha",
