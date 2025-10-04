@@ -1,11 +1,11 @@
 {
   "name": "react-caches",
-  "version": "5.4.11",
+  "version": "5.4.12",
   "description": "React Caches is a lightweight and easy-to-use package that provide you a simple way to use Local Storage, Session Storage, Caches Storage & Also provide Encryption & Decryption data alongside with outers package",
   "main": "./lib/config/react-caches.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Nexoral/react-caches.git"
+    "url": "git://github.com/nexoral/react-caches.git"
   },
   "types": "./lib/config/react-caches.d.ts",
   "author": "Ankan Saha",
