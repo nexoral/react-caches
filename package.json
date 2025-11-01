@@ -1,6 +1,6 @@
 {
   "name": "react-caches",
-  "version": "5.4.13",
+  "version": "5.4.14",
   "description": "React Caches is a lightweight and easy-to-use package that provide you a simple way to use Local Storage, Session Storage, Caches Storage & Also provide Encryption & Decryption data alongside with outers package",
   "main": "./lib/config/react-caches.js",
   "repository": {
@@ -13,8 +13,8 @@
   "private": false,
   "scripts": {
     "test": "eslint ./source/**/*.{ts,tsx} --fix",
-    "build": "yarn test && tsc",
-    "prepare": "yarn build"
+    "build": "npm test && tsc",
+    "prepare": "npm run build"
   },
   "keywords": [
     "react",
