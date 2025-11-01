@@ -9,27 +9,31 @@ jobs:
   publish_to_npm:
     name: Publish to NPM Registry
     runs-on: ubuntu-latest
-    env:
-      NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+    permissions:
+      contents: read
+      id-token: write  # Required for OIDC/Trusted Publishing
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Ensure npm 11.5.1 or later
+        run: npm install -g npm@latest
 
       - name: Install dependencies
-        run: yarn install
-
-      - name: Run tests
-        run: yarn test
+        run: npm ci
 
       - name: Build package
-        run: yarn run build
+        run: npm run build
 
-      - name: Set NPM Auth Token
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}" > ~/.npmrc
+      - name: Publish to NPM Registry
+        run: npm publish --access public
 
-      - name: Publish to NPM
-        run: npm publish --registry https://registry.npmjs.org --access public
 
   publish_to_github:
     name: Publish to Github Registry
